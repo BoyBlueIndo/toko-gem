@@ -10,6 +10,7 @@
     /*  include banner area  */
         include ('Template/_banner-area.php');
     /*  include banner area  */
+    // kosng.
 
     /*  include top sale section */
         include ('Template/_top-sale.php');

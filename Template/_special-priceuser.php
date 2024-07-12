@@ -17,7 +17,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
 ?>
 <section id="special-price">
     <div class="container"><br>
-        <h4 class="font-rubik font-size-20">Silahkan Login untuk Membeli Produk Indomie</h4>
+        <h4 class="font-rubik font-size-20">SELAMAT YUDHA!!</h4>
         <!-- <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">Daftar Indomie</button>
             -->
@@ -29,7 +29,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
                 <div class="item py-2" style="width: 200px;">
                     <div class="product font-rale">
                         
-                        <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid"></a>
+                        <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/imagenes/indomie.png"; ?>" alt="product1" class="img-fluid"></a>
                         <div class="text-center">
                             <h6><?php echo $item['item_name'] ?? "Unknown"; ?></h6>
                             <div class="rating text-warning font-size-12">
