@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <img src="<?php echo $item['item_image'] ?? "./assets/imagenes/indomie.png" ?>" alt="product" class="img-fluid">
+            <img src="<?php echo $item['item_image'] ?? "./assets/imagenes/unknown.png" ?>" alt="product" class="img-fluid">
                 <div class="form-row pt-4 font-size-16 font-baloo">
                     <div class="col">
                         <button type="submit" class="btn btn-danger form-control">Proses Pesanan</button>
@@ -16,9 +16,9 @@
                     <div class="col">
                         <?php
                         if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])){
-                            echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">Prooblemas</button>';
+                            echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">Pesan</button>';
                         }else{
-                            echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-16 form-control">Añadir al carrito</button>';
+                            echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-16 form-control">Masukkan keranjang</button>';
                         }
                         ?>
                     </div>
@@ -42,16 +42,23 @@
                 <!---    product price       -->
                 <table class="my-3">
                     <tr class="font-rale font-size-14">
-                        <td>Indomie</td>
-                        <td><strike>Rp.2500.00</strike></td>
+                        <td>Harga sebelumnya:</td>
+                        <td><strike>Rp. <span><?php echo $item['item_price'] ?? 0; ?></span><small class="text-dark font-size-12">&nbsp;&nbsp;</small></strike></td>
                     </tr>
                     <tr class="font-rale font-size-14">
-                        <td>Indomiie</td>
-                        <td class="font-size-20 text-danger">Rp. <span><?php echo $item['item_price'] ?? 0; ?></span><small class="text-dark font-size-12">&nbsp;&nbsp;Inpuestos</small></td>
+                        <?php 
+                            $diskon = 0.5;  
+                            $hitungandiskon = ($item['item_price']) * $diskon;
+                            
+                        ?>
+                        <td>Diskon:</td>
+                        <td class="font-size-20 text-danger">50%</td>
                     </tr>
                     <tr class="font-rale font-size-14">
-                        <td>Iindomie</td>
-                        <td><span class="font-size-16 text-danger">Rp. 2500.00</span></td>
+                        <td>Total:</td>
+                        <td><span class="font-size-16 text-danger">
+                            Rp. <span><?php echo ($item['item_price'] ?? 0) - $hitungandiskon; ?></span><small class="text-dark font-size-12">&nbsp;&nbsp;</small></span>
+                        </td>
                     </tr>
                 </table>
               

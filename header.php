@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Indomie</title>
+    <title>Games shop</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -34,7 +34,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
-        <a class="navbar-brand" href="#">Indomie Indonesia</a>
+        <a class="navbar-brand" href="#">Games of games</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,7 +44,7 @@
                     <a class="nav-link" href="index.php">Produk<i class="fas fa-chevron-down"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://indomieca.com/home/about/">Web Indomie</a>
+                    <a class="nav-link" href=https://id.wikipedia.org/wiki/Permainan">Games</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kategori.php">Kategori<i class="fas fa-chevron-down"></i></a>

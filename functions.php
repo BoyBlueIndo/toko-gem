@@ -63,10 +63,7 @@ function registrasi($data){
 
 
 	//tambahkan user baru kedatabase
-	mysqli_query($conn, "INSERT INTO user VALUES('', '$first_name', '$last_name', '$register_date', '$username', '$password', '$password2')");
+	mysqli_query($conn, "INSERT INTO user VALUES(' ', '$first_name', '$last_name', '$register_date', '$username', '$password', '$password2')");
 	return mysqli_affected_rows($conn);
-
-}
-
-
+	}
 ?>
