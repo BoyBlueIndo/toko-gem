@@ -1,13 +1,11 @@
 <?php
 // include header.php file
-include ('header.php');
+include ('headeruser.php');
 ?>
 
 <?php
 
-    // include ('Template/_products.php');
-
-    include ('Template/_products.php');
+    include ('Template/_productsuser.php');
   
 
 

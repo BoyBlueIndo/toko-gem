@@ -1,5 +1,5 @@
 <?php
-/* if ( isset($_POST["submit"])) {
+if ( isset($_POST["submit"])) {
     if(tambah($_POST) > 0 ){
 		echo "
 		<script>
@@ -15,7 +15,7 @@
 		</script>
 		"; 
 	}
-} */ 
+}
 
 ?>
 
@@ -42,7 +42,7 @@
                     <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check"></i>Ada promo gratis ongkir</h6>
                     <div class="border-top py-4">
                         <h5 class="font-baloo font-size-20">Subtotal 
-                            (<?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; <span class="text-danger">Rp.<span class="text-danger" id="deal-price"><?php echo (isset($subTotal) ? $Cart->getSum($subTotal): 0)  - $hitungandiskon; ?></span> </span> </h5>
+                            (<?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; <span class="text-danger">Rp.<span class="text-danger" id="deal-price"><?php echo (isset($subTotal) ? $Cart->getSum($subTotal): 0); ?></span> </span> </h5>
                             <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-100 bg-light">
 
                     </div>

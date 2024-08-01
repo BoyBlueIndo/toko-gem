@@ -17,7 +17,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
 ?>
 <section id="special-price">
     <div class="container"><br>
-        <h4 class="font-rubik font-size-20">Silahkan Login untuk Membeli Produk Indomie</h4>
+        <h4 class="font-rubik font-size-20">Silahkan Login untuk Membeli Games</h4>
         <!-- <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">Daftar Indomie</button>
             -->

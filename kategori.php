@@ -1,7 +1,7 @@
 <?php
     ob_start();
     // include header.php file
-    include ('headeruser.php');
+    include ('header.php');
 ?>
 
 <?php

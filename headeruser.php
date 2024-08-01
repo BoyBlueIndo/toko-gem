@@ -46,15 +46,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://id.wikipedia.org/wiki/Permainan">Games</a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" href="kategori.php">Kategori<i class="fas fa-chevron-down"></i></a>
-                </li>
+                </li>-->
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
                 </li>
             </ul>
             <form action="POST" class="font-size-14 font-rale">
-                <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
+                <a href="cartuser.php" class="py-2 rounded-pill color-primary-bg">
                     <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
                     <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php echo count($product->getData('cart')); ?></span>
                 </a>

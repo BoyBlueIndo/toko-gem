@@ -29,7 +29,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
                 <div class="item py-2" style="width: 200px;">
                     <div class="product font-rale">
                         
-                        <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/imagenes/unknown.png"; ?>" alt="product1" class="img-fluid"></a>
+                        <a href="<?php printf('%s?item_id=%s', 'productuser.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/imagenes/unknown.png"; ?>" alt="product1" class="img-fluid"></a>
                         <div class="text-center">
                             <h6><?php echo $item['item_name'] ?? "Unknown"; ?></h6>
                             <div class="rating text-warning font-size-12">

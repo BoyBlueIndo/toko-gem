@@ -30,7 +30,7 @@ function query($query){
 	}
 	return $rows;
 }
-function registrasi($data){
+function registrasi($data){ // sebelumnya registrasi.
 	global $conn;
 
 	$first_name = htmlspecialchars($data["first_name"]);
@@ -66,4 +66,17 @@ function registrasi($data){
 	mysqli_query($conn, "INSERT INTO user VALUES(' ', '$first_name', '$last_name', '$register_date', '$username', '$password', '$password2')");
 	return mysqli_affected_rows($conn);
 	}
+	
+function tambah($data){
+	global $conn;
+	
+	$item_id = $data["item_id"];
+	$item_name = htmlspecialchars($data["item_name"]);
+	$item_price = htmlspecialchars($data["item_price"]);
+	$item_image = htmlspecialchars($data["item_image"]);
+	$item_register =  strtolower(stripcslashes($data["item_register"]));
+
+	mysqli_query($conn, "INSERT INTO user VALUES(' ', '$item_id', '$item_name', '$item_price', '$item_image', '$item_register')");
+	return mysqli_affected_rows($conn);
+}	
 ?>

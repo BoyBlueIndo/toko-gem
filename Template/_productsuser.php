@@ -10,7 +10,6 @@
             <div class="col-sm-6">
             <img src="<?php echo $item['item_image'] ?? "./assets/imagenes/unknown.png" ?>" alt="product" class="img-fluid">
                 <div class="form-row pt-4 font-size-16 font-baloo">
-                    <!--
                     <div class="col">
                         <button type="submit" class="btn btn-danger form-control">Proses Pesanan</button>
                     </div>
@@ -23,7 +22,6 @@
                         }
                         ?>
                     </div>
-                    -->
                 </div>
             </div>
             <div class="col-sm-6 py-5">
