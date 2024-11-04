@@ -1,6 +1,5 @@
 <?php
 
-
 class DBController
 {
     // Database Connection Properties
@@ -8,6 +7,7 @@ class DBController
     protected $user = 'root';
     protected $password = '';
     protected $database = "shopee";
+    protected $port = 3307; // Tambahkan port di sini
 
     // connection property
     public $con = null;
@@ -15,9 +15,9 @@ class DBController
     // call constructor
     public function __construct()
     {
-        $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database, $this->port);
         if ($this->con->connect_error){
-            echo "Fail " . $this->con->connect_error;
+            echo "Fail" . $this->con->connect_error;
         }
     }
 
@@ -34,3 +34,4 @@ class DBController
         }
     }
 }
+?>

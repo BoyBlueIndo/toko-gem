@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-12-2021 a las 04:11:51
--- Versión del servidor: 8.0.27
--- Versión de PHP: 7.4.26
+-- Host: 127.0.0.1:3307
+-- Waktu pembuatan: 02 Agu 2024 pada 09.38
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,106 +18,176 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `shopee`
+-- Database: `shopee`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cart`
+-- Struktur dari tabel `cart`
 --
 
--- DROP TABLE IF EXISTS `cart`;
-CREATE TABLE IF NOT EXISTS `cart` (
-  `cart_id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
-  `item_id` int NOT NULL,
-  PRIMARY KEY (`cart_id`)
-) 
--- ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `cart`
+-- Dumping data untuk tabel `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`) VALUES
-(33, 1, 2),
-(34, 1, 11);
+(31, 1, 3);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product`
+-- Struktur dari tabel `product`
 --
 
--- DROP TABLE IF EXISTS `product`;
-CREATE TABLE IF NOT EXISTS `product` (
-  `item_id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `product` (
+  `item_id` int(11) NOT NULL,
   `item_brand` varchar(200) NOT NULL,
   `item_name` varchar(255) NOT NULL,
   `item_price` double(10,2) NOT NULL,
   `item_image` varchar(255) NOT NULL,
-  `item_register` datetime DEFAULT NULL,
-  PRIMARY KEY (`item_id`)
-) 
--- ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
---  COLLATE=utf8mb4_0900_ai_ci;
+  `item_register` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `product`
+-- Dumping data untuk tabel `product`
 --
 
 INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
-(1, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Lavandería La Rapidita', 152.00, './assets/imagenes/Producto.png', '2021-11-29 11:08:57'),
-(2, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Lavandería 24/7', 122.00, './assets/imagenes/Producto1.png', '2021-11-29 11:08:57'),
-(3, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Lavarropa', 122.00, './assets/imagenes/Producto2.png', '2021-11-29 11:08:57'),
-(4, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Lavandería Dos Pasos', 122.00, './assets/imagenes/Producto3.png', '2021-11-29 11:08:57'),
-(5, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Limpio y Suave', 122.00, './assets/imagenes/Producto3.png', '2021-11-29 11:08:57'),
-(6, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Blanco y limpio; Lavalisto.', 122.00, './assets/imagenes/Producto4.png', '2021-11-29 11:08:57'),
-(7, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Ready Laundry', 122.00, './assets/imagenes/Producto5.png', '2021-11-29 11:08:57'),
-(8, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Lava Speed', 122.00, './assets/imagenes/Producto6.png', '2021-11-29 11:08:57'),
-(9, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Wash and Go', 152.00, './assets/imagenes/Producto7.png', '2021-11-29 11:08:57'),
-(10, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Clear and Clean', 152.00, './assets/imagenes/Producto8.png', '2021-11-29 11:08:57'),
-(11, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'La Laverie', 152.00, './assets/imagenes/Producto9.png', '2021-11-29 11:08:57'),
-(12, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Lava a diario', 152.00, './assets/imagenes/Producto2.png', '2021-11-29 11:08:57'),
-(13, 'Una lavandería es un negocio donde se limpia la ropa, comúnmente se emplea agua y detergentes, los tipos de lavanderías más comunes se clasifican en: ▪ pequeñas lavanderías ▪ lavanderías industriales ', 'Washing Machine Plus', 152.00, './assets/imagenes/Producto3.png', '2021-11-29 11:08:57');
+(1, '???', '???', 0.00, './assets/imagenes/unknown.png', '2024-07-17 10:31:15'),
+(2, 'Red spinni thingy on pipes', 'Death halved 2', 25000.00, './assets/imagenes/halflife.png', '2024-07-15 11:54:30'),
+(3, 'Shield Riot', 'Vola-X-ront', 35000.00, './assets/imagenes/valorant.png', NULL),
+(4, 'idk', 'idk', 2500.00, './assets/imagenes/Producto3.png', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Struktur dari tabel `transaksi`
 --
 
--- DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
+CREATE TABLE `transaksi` (
+  `tran_id` int(200) NOT NULL,
+  `jumlah_harga` int(255) NOT NULL,
+  `user_id_2` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
   `register_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
-) 
--- ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `password2` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `user`
+-- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(1, 'Terri', 'gualberto ku chay ', '0000-00-00 00:00:00');
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`, `username`, `password`, `password2`) VALUES
+(6, 'erg', 'erg', '2024-07-02 00:00:00', 'boyblue_indo', '$2y$10$HQuKY6BCCepv9irvFX8Y/OZVWft9k.Phpu/8ONQ.hsusNRq6cd5Sy', '$2y$10$FpSjevzII6isqnCATOWFDejb.tB09zzDFsDdWJP39BifjPmIEvYCe'),
+(7, 'Poli', 'Si', '2024-07-15 00:00:00', 'minions', '$2y$10$ew5Sv1eCbed1BiHtN5b07.Nv5tIHp8Ic6MHj2ZRboKvuVkxGWCMnm', '$2y$10$VxnXofPwvBOOoVdvi2v.GufuhmZQmW1/sAxHQsfN7rQrC57d9NcHO'),
+(8, 'Raden', 'Ariyanto', '2024-07-19 00:00:00', 'boyblue', '$2y$10$DJe0LUGzAN4eBts4jQFG4uvVQsB56EejtgCLoIuqz2l3ex4OHRAwe', '$2y$10$Hmoc1hhHG5htJG8IAytEl.2RvwhQKVKiywEnaG5a.21lc0ZSIGyUq'),
+(9, 'kepo', 'kepo', '2024-08-02 00:00:00', 'kepo', '$2y$10$Mvp4RE40pM4HZHPfF3/1.eDr.BCZmIJuWvxnVT0Fj7gf0rWgclOEi', '$2y$10$vJyxpSKaDRK3cnvKqzRmkuGN9bgUI/44uUMN/m7Lp1HaEdEB/38J6');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `wishlist`
+-- Struktur dari tabel `wishlist`
 --
 
--- DROP TABLE IF EXISTS `wishlist`;
-CREATE TABLE IF NOT EXISTS `wishlist` (
-  `cart_id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `item_id` int NOT NULL
-) 
--- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `wishlist` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`);
+
+--
+-- Indeks untuk tabel `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`item_id`);
+
+--
+-- Indeks untuk tabel `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`tran_id`),
+  ADD KEY `user_id_2_fk` (`user_id_2`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indeks untuk tabel `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`cart_id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT untuk tabel `product`
+--
+ALTER TABLE `product`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `tran_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`user_id_2`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -18,9 +18,9 @@ $product = new Product($db);
 $product_shuffle = $product->getData();
 
 // Cart object 
-$Cart = new Cart($db );
+$Cart = new Cart($db);
 
-$conn = mysqli_connect("localhost", "root", "", "shopee");
+$conn = mysqli_connect("localhost", "root", "", "shopee", 3307);
 function query($query){
 	global $conn;
 	$result = mysqli_query($conn, $query);
@@ -32,7 +32,7 @@ function query($query){
 }
 function registrasi($data){ // sebelumnya registrasi.
 	global $conn;
-
+ 
 	$first_name = htmlspecialchars($data["first_name"]);
 	$last_name = htmlspecialchars($data["last_name"]);
 	$register_date = htmlspecialchars($data["register_date"]);
@@ -63,7 +63,7 @@ function registrasi($data){ // sebelumnya registrasi.
 
 
 	//tambahkan user baru kedatabase
-	mysqli_query($conn, "INSERT INTO user VALUES(' ', '$first_name', '$last_name', '$register_date', '$username', '$password', '$password2')");
+	mysqli_query($conn, "INSERT INTO user VALUES('', '$first_name', '$last_name', '$register_date', '$username', '$password', '$password2')");
 	return mysqli_affected_rows($conn);
 	}
 	

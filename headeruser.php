@@ -1,3 +1,25 @@
+<?php
+require ('functions.php');
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// $user_id = $_SESSION['user_id'];
+$username = $_SESSION['username'];
+
+// Ambil data pengguna dari database berdasarkan username
+$stmt = $conn->prepare("SELECT * FROM user WHERE username= ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+echo "Selamat Datang, " . $row['username'] . "!";
+echo 'Session ID: ' . session_id();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +37,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="style.css">
-
-    <?php
-
-    require ('functions.php');
-    ?>
-
 </head>
 <body>
-
 
 <header id="header">
     <div class="strip d-flex justify-content-between px-4 py-1 bg-light">

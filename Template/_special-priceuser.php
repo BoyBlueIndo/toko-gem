@@ -1,23 +1,24 @@
 <?php
+
     $brand = array_map(function ($pro){ return $pro['item_brand']; }, $product_shuffle);
     $unique = array_unique($brand);
     sort($unique);
     shuffle($product_shuffle);
 
 
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-    if (isset($_POST['special_price_submit'])){
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        if (isset($_POST['special_price_submit'])){
       
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+            $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+        }
     }
-}
 
-$in_cart = $Cart->getCartId($product->getData('cart'));
+    $in_cart = $Cart->getCartId($product->getData('cart'));
 
 ?>
 <section id="special-price">
     <div class="container"><br>
-        <h4 class="font-rubik font-size-20">Selamat Datang!</h4>
+        <Selamat class="font-rubik font-size-20">Selamat DAtang!</h4>
         <!-- <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">Daftar Indomie</button>
             -->

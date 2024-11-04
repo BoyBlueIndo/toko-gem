@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 require 'functions.php';
 
 if(isset($_POST["login"])){
@@ -17,8 +16,13 @@ if(isset($_POST["login"])){
 		//cek password
 		$row = mysqli_fetch_assoc($result);
 		if(password_verify($password, $row["password"])){
+			$_SESSION['user_id'] = $row['user_id'];
+			$_SESSION['username'] = $username;
 			header("Location: indexuser.php");
-			exit;
+
+			echo 'User ID yang disimpan: ' . $_SESSION['user_id'];
+			echo 'Session ID: ' . session_id();
+    		exit; // Berhenti di sini untuk memeriksa output
 		}
 	}
 

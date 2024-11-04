@@ -35,7 +35,7 @@ class Cart
     public  function addToCart($userid, $itemid){
         if (isset($userid) && isset($itemid)){
             $params = array(
-                "user_id" => $userid,
+                "id_user" => $userid,
                 "item_id" => $itemid
             );
 
